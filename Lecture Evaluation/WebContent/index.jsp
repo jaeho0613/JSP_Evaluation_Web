@@ -7,14 +7,14 @@
 <html>
 
 <head>
-	<meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>강의평가 웹 사이트</title>
+<meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강의평가 웹 사이트</title>
 
-	<!-- 부트스트랩 CSS 추가하기 -->
-	<link rel="stylesheet" href="./css/bootstrap.min.css" />
-	<!-- 커스텀 CSS 추가하기 -->
-	<link rel="stylesheet" href="./css/custom.css" />
+<!-- 부트스트랩 CSS 추가하기 -->
+<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<!-- 커스텀 CSS 추가하기 -->
+<link rel="stylesheet" href="./css/custom.css" />
 </head>
 
 <body>
@@ -22,6 +22,7 @@
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
+		System.out.println(userID);
 	}
 
 	if (userID == null) {
@@ -48,21 +49,27 @@
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="index.jsp">강의평가 웹 사이트</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="index.jsp">메인</a></li>
-				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 회원 관리 </a>
+				<li class="nav-item active"><a class="nav-link"
+					href="index.jsp">메인</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> 회원 관리 </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<%
 						if (userID == null) {
 						%>
-						<a class="dropdown-item" href="userLogin.jsp">로그인</a> <a class="dropdown-item" href="userJoin.jsp">회원가입</a>
+						<a class="dropdown-item" href="userLogin.jsp">로그인</a> <a
+							class="dropdown-item" href="userJoin.jsp">회원가입</a>
 						<%
 						} else {
 						%>
@@ -70,11 +77,11 @@
 						<%
 						}
 						%>
-					</div>
-				</li>
+					</div></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="내용을 입력하세요." aria-label="Search" />
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="내용을 입력하세요." aria-label="Search" />
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 					검색</button>
 			</form>
@@ -89,12 +96,13 @@
 				<option value="전공">전공</option>
 				<option value="교양">교양</option>
 				<option value="기타">기타</option>
-			</select> <input type="text" name="search" class="form-control mx-1 mt-2" placeholder="내용을 입력하세요." />
+			</select> <input type="text" name="search" class="form-control mx-1 mt-2"
+				placeholder="내용을 입력하세요." />
 			<button type="submit" class="btn btn-primary mx-1 mt-2">검색</button>
-			<button type="button" class="btn btn-primary mx-1 mt-2" data-toggle="modal"
-				data-target="#registerModal">등록하기</button>
-			<button type="button" class="btn btn-danger mx-1 mt-2" data-toggle="modal"
-				data-target="#reportModal">신고하기</button>
+			<button type="button" class="btn btn-primary mx-1 mt-2"
+				data-toggle="modal" data-target="#registerModal">등록하기</button>
+			<button type="button" class="btn btn-danger mx-1 mt-2"
+				data-toggle="modal" data-target="#reportModal">신고하기</button>
 		</form>
 
 		<!-- 카드 1 -->
@@ -122,8 +130,10 @@
 							15)</span>
 					</div>
 					<div class="col-3 text-right">
-						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=">추천</a> <a
-							onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=">삭제</a>
+						<a onclick="return confirm('추천하시겠습니까?')"
+							href="./likeAction.jsp?evaluationID=">추천</a> <a
+							onclick="return confirm('삭제하시겠습니까?')"
+							href="./deleteAction.jsp?evaluationID=">삭제</a>
 					</div>
 				</div>
 			</div>
@@ -153,8 +163,10 @@
 							1)</span>
 					</div>
 					<div class="col-3 text-right">
-						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=">추천</a> <a
-							onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=">삭제</a>
+						<a onclick="return confirm('추천하시겠습니까?')"
+							href="./likeAction.jsp?evaluationID=">추천</a> <a
+							onclick="return confirm('삭제하시겠습니까?')"
+							href="./deleteAction.jsp?evaluationID=">삭제</a>
 					</div>
 				</div>
 			</div>
@@ -184,8 +196,10 @@
 							2)</span>
 					</div>
 					<div class="col-3 text-right">
-						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=">추천</a> <a
-							onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=">삭제</a>
+						<a onclick="return confirm('추천하시겠습니까?')"
+							href="./likeAction.jsp?evaluationID=">추천</a> <a
+							onclick="return confirm('삭제하시겠습니까?')"
+							href="./deleteAction.jsp?evaluationID=">삭제</a>
 					</div>
 				</div>
 			</div>
@@ -193,12 +207,14 @@
 	</section>
 
 	<!-- 등록하기 Modal -->
-	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="modal">평가 등록</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
@@ -206,15 +222,18 @@
 					<form action="./evaluationRegisterAction.jsp" method="post">
 						<div class="form-row">
 							<div class="form-group col-sm-6">
-								<label>강의명</label> <input type="text" name="lectureName" class="form-control" maxlength="20">
+								<label>강의명</label> <input type="text" name="lectureName"
+									class="form-control" maxlength="20">
 							</div>
 							<div class="form-group col-sm-6">
-								<label>교수명</label> <input type="text" name="professorName" class="form-control" maxlength="20">
+								<label>교수명</label> <input type="text" name="professorName"
+									class="form-control" maxlength="20">
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-4">
-								<label>수강 연도</label> <select name="lectureYear" class="form-control">
+								<label>수강 연도</label> <select name="lectureYear"
+									class="form-control">
 									<option value="2011">2011</option>
 									<option value="2012">2012</option>
 									<option value="2013">2013</option>
@@ -231,7 +250,8 @@
 								</select>
 							</div>
 							<div class="form-group col-sm-4">
-								<label>수강 학기</label> <select name="semesterDivide" class="form-control">
+								<label>수강 학기</label> <select name="semesterDivide"
+									class="form-control">
 									<option value="1학기" selected>1학기</option>
 									<option value="여름학기" selected>여름학기</option>
 									<option value="2학기" selected>2학기</option>
@@ -239,7 +259,8 @@
 								</select>
 							</div>
 							<div class="form-group col-sm-4">
-								<label>강의 구분</label> <select name="lectureDivide" class="form-control">
+								<label>강의 구분</label> <select name="lectureDivide"
+									class="form-control">
 									<option value="전공" selected>전공</option>
 									<option value="교양" selected>교양</option>
 									<option value="기타" selected>기타</option>
@@ -247,12 +268,13 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label>제목</label> <input type="text" name="evaluationTime" class="form-control" maxlength="30">
+							<label>제목</label> <input type="text" name="evaluationTitle"
+								class="form-control" maxlength="30">
 						</div>
 						<div class="form-group">
 							<label>내용</label>
-							<textarea name="evaluationContent" class="form-control" maxlength="2048"
-								style="height: 180px;"></textarea>
+							<textarea name="evaluationContent" class="form-control"
+								maxlength="2048" style="height: 180px;"></textarea>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-sm-3">
@@ -266,7 +288,8 @@
 								</select>
 							</div>
 							<div class="form-group col-sm-3">
-								<label>성적</label> <select name="creditScore" class="form-control">
+								<label>성적</label> <select name="creditScore"
+									class="form-control">
 									<option value="A" selected>A</option>
 									<option value="B">B</option>
 									<option value="C">C</option>
@@ -276,7 +299,8 @@
 								</select>
 							</div>
 							<div class="form-group col-sm-3">
-								<label>널널</label> <select name="comfortableScore" class="form-control">
+								<label>널널</label> <select name="comfortableScore"
+									class="form-control">
 									<option value="A" selected>A</option>
 									<option value="B">B</option>
 									<option value="C">C</option>
@@ -286,7 +310,8 @@
 								</select>
 							</div>
 							<div class="form-group col-sm-3">
-								<label>강의</label> <select name="lectureScore" class="form-control">
+								<label>강의</label> <select name="lectureScore"
+									class="form-control">
 									<option value="A" selected>A</option>
 									<option value="B">B</option>
 									<option value="C">C</option>
@@ -297,7 +322,8 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">취소</button>
 							<button type="submit" class="btn btn-primary">등록하기</button>
 						</div>
 					</form>
@@ -307,26 +333,31 @@
 	</div>
 
 	<!-- 신고하기 Modal -->
-	<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+	<div class="modal fade" id="reportModal" tabindex="-1" role="dialog"
+		aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="modal">신고하기</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<form action="./reportAction.jsp" method="post">
 						<div class="form-group">
-							<label>신고 제목</label> <input type="text" name="reportTitle" class="form-control" maxlength="30">
+							<label>신고 제목</label> <input type="text" name="reportTitle"
+								class="form-control" maxlength="30">
 						</div>
 						<div class="form-group">
 							<label>신고 내용</label>
-							<textarea name="reprotContent" class="form-control" maxlength="2048" style="height: 180px;"></textarea>
+							<textarea name="reprotContent" class="form-control"
+								maxlength="2048" style="height: 180px;"></textarea>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">취소</button>
 							<button type="submit" class="btn btn-danger">신고하기</button>
 						</div>
 					</form>
