@@ -81,8 +81,8 @@ try {
 	e.printStackTrace();
 	PrintWriter wr = response.getWriter();
 	wr.println("<script>");
-	wr.println("alert('오류가 발생했습니다.')");
-	wr.println("histroy.back();");
+	wr.println("alert('오류가 발생했습니다.');");
+	wr.println("history.back();");
 	wr.println("</script>");
 	wr.close();
 	return;
@@ -115,13 +115,21 @@ try {
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="index.jsp">메인</a></li>
+				<li class="nav-item active"><a class="nav-link" href="index.jsp">메인</a></li>
 				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 회원 관리 </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="userLogin.jsp">로그인</a>
-						<a class="dropdown-item active" href="userJoin.jsp">회원가입</a>
+						<%
+						if (userID == null) {
+						%>
+						<a class="dropdown-item" href="userLogin.jsp">로그인</a> <a class="dropdown-item" href="userJoin.jsp">회원가입</a>
+						<%
+						} else {
+						%>
 						<a class="dropdown-item" href="userLogout.jsp">로그아웃</a>
+						<%
+						}
+						%>
 					</div>
 				</li>
 			</ul>

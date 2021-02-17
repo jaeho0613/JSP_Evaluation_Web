@@ -20,7 +20,7 @@ if (session.getAttribute("userID") != null) {
 if (userID == null) {
 	PrintWriter wr = response.getWriter();
 	wr.println("<script>");
-	wr.println("alter('로그인을 해주세요.');");
+	wr.println("alert('로그인을 해주세요.');");
 	wr.println("location.href = 'userLogin.jsp'");
 	wr.println("</script>");
 	wr.close();
