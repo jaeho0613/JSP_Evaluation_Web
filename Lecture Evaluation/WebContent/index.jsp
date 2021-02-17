@@ -35,9 +35,9 @@ pageEncoding="UTF-8"%>
             회원 관리
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">로그인</a>
-            <a class="dropdown-item" href="#">회원가입</a>
-            <a class="dropdown-item" href="#">로그아웃</a>
+            <a class="dropdown-item" href="userLogin.jsp">로그인</a>
+            <a class="dropdown-item" href="userJoin.jsp">회원가입</a>
+            <a class="dropdown-item" href="userLogout.jsp">로그아웃</a>
           </div>
         </li>
       </ul>
