@@ -1,10 +1,11 @@
 -- 데이터 베이스 생성
+drop database LectureEvaluation;
 create database LectureEvaluation;
 use LectureEvaluation;
 
 -- 유저 테이블 
 create table user (
-	userID varchar(20),
+	userID varchar(20) primary key,
     userPassword varchar(64),
     userEmail varchar(50),
     userEmailHash varchar(64),
@@ -35,9 +36,3 @@ create table likey(
     evaluationID int,
     userIP varchar(50)
 );
-
-alter table user add primary key (userID);
-
-desc user;
-desc evaluation;
-desc likey;

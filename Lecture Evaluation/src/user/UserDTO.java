@@ -52,7 +52,7 @@ public class UserDTO {
 	}
 
 	public UserDTO(String userID, String userPassword, String userEmail, String userEmailHash,
-			Boolean userEmailChecked) {
+			boolean userEmailChecked) {
 		super();
 		this.userID = userID;
 		this.userPassword = userPassword;

@@ -64,7 +64,6 @@ public class UserDAO {
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserEmail());
 			pstmt.setString(4, user.getUserEmailHash());
-			rs = pstmt.executeQuery();
 			return pstmt.executeUpdate(); // 성공시 1반환 (insert된 테이터 개수)
 		} catch (Exception e) {
 			e.printStackTrace();
