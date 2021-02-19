@@ -36,3 +36,5 @@ create table likey(
     evaluationID int,
     userIP varchar(50)
 );
+
+-- insert into evaluation values(NULL,"ywm2004","프로그래밍","교수명","2021","1학기","교양","교양","제목","내용","A","A","A",0);
