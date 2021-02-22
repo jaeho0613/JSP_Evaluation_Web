@@ -31,6 +31,7 @@
 	if(request.getParameter("lectureDivide") != null) {
 		lectureDivide = request.getParameter("lectureDivide");
 	}
+	
 	if(request.getParameter("searchType") != null) {
 		searchType = request.getParameter("searchType");
 	}

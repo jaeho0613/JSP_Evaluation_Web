@@ -1,5 +1,5 @@
 -- 데이터 베이스 생성
-drop database LectureEvaluation;
+-- drop database LectureEvaluation;
 create database LectureEvaluation;
 use LectureEvaluation;
 
